@@ -14,8 +14,8 @@ struct JobCenter: Codable {
     let comments: String?
     let facilityName: String?
     let city: String
-    let latitude: String
-    let longitude: String
+    let latitude: String?
+    let longitude: String?
     let zipCode: String
     let phoneNumber: String
     enum CodingKeys: String, CodingKey {
@@ -31,7 +31,8 @@ struct JobCenter: Codable {
     }
     
     var coordinate: CLLocationCoordinate2D {
-        guard let latDouble = Double(latitude), let longDouble = Double(longitude) else {return CLLocationCoordinate2DMake(0, 0)}
+        guard let lat = latitude, let long = longitude else {return CLLocationCoordinate2DMake(0.0, 0.0)}
+        guard let latDouble = Double(lat), let longDouble = Double(long) else {return CLLocationCoordinate2DMake(0.0, 0.0)}
         return CLLocationCoordinate2DMake(latDouble, longDouble)
         
     }
