@@ -6,6 +6,6 @@
 3. Details about each center includes a and directions 
 4. Able to save any number of centers to favorites for later use
 
-![](mao.gif)
-![](mapdirection.gif)
-![](mapdetail.gif)
+![](map.gif)
+![](direction.gif)
+![](mapdetails.gif)
